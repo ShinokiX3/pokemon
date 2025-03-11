@@ -1,5 +1,11 @@
 import React from "react";
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { 
+    FieldErrors, 
+    FormProvider, 
+    SubmitHandler, 
+    useForm, 
+    UseFormRegister 
+} from "react-hook-form";
 import { useFetchPokemons } from "../../hooks/usePokemonApi";
 import Input from "../../ui/input/input";
 import { namePattern, nameValidations, pokeSelectFourValidations } from "./utils";
@@ -9,8 +15,8 @@ import Select from "../../ui/select/select";
 import type { SelectOption } from "../../ui/select/select.type";
 
 interface FieldsProps {
-    register: any;
-    errors: any;
+    register: UseFormRegister<PokemonFormData>;
+    errors: FieldErrors<PokemonFormData>;
 }
 
 const Fields: React.FC<FieldsProps> = ({ register, errors }) => {
