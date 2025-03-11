@@ -12,3 +12,6 @@ export const nameValidations = {
 
 export const pokeSelectValidations = <T>(value: T[]) =>
     value.length > 0 || "At least one Pokémon must be selected.";
+
+export const pokeSelectFourValidations = <T>(value: T[]) =>
+    value.length === 4 || "You must select 4 Pokémons to battle.";

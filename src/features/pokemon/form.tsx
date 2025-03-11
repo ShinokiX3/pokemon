@@ -2,7 +2,7 @@ import React from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { useFetchPokemons } from "../../hooks/usePokemonApi";
 import Input from "../../ui/input/input";
-import { namePattern, nameValidations, pokeSelectValidations } from "./utils";
+import { namePattern, nameValidations, pokeSelectFourValidations } from "./utils";
 import { Button } from "../../stories/Button";
 import { PokemonFormData } from "../../schema/pokemon.type";
 import Select from "../../ui/select/select";
@@ -49,7 +49,7 @@ const Fields: React.FC<FieldsProps> = ({ register, errors }) => {
 
             <Select 
                 name="pokemon"
-                rules={{ validate: pokeSelectValidations<SelectOption> }}
+                rules={{ validate: pokeSelectFourValidations<SelectOption> }}
                 label='Select pokemon' 
                 multiple 
                 options={pokemons.map(({ name, url }) => ({ label: name, value: name, url: url }))} 
