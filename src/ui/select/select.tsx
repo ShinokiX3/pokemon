@@ -83,7 +83,7 @@ export const Select: React.FC<SelectProps> = ({
         }
         
         if (!multiple) {
-            onChange([option]);
+            onChange(option.value === fieldValue[0]?.value ? [] : [option]);
             setIsOpen(false);
         }
     };
